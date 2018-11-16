@@ -14,7 +14,7 @@ class BooksApp extends React.Component {
       <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/search/" component={Search} />
-      <Route component={NotFound} />
+      
       </Switch>
       </div>
     )
