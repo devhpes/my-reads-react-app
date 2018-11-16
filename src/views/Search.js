@@ -32,6 +32,7 @@ class Search extends React.Component {
       });
     }
 
+    //Handling search according to the user input in search bar
     handleSubmitQuery  = query => {
         this.setState({query: query})
         let listingBooks = []
