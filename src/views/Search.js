@@ -67,7 +67,9 @@ class Search extends React.Component {
                     <Link className="close-search" to="/"> Close
                     </Link>
                     <div className="search-books-input-wrapper">
-                        <input type="text" placeholder="Search by title or author"  onChange={(event) => this.handleSubmitQuery(event.target.value)} value={this.state.query}/>
+                    <DebounceInput
+                    minLength={0}
+                    debounceTimeout={200} placeholder="Search by title or author"  onChange={(event) => this.handleSubmitQuery(event.target.value)} value={this.state.query}/>
                     </div>
                     </div>
                     <div className="search-books-results">
