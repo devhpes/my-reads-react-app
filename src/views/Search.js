@@ -1,6 +1,34 @@
 import React from 'react';
 
 class Search extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            query : "",
+            books: [],
+            listingBooks: [],
+        }
+    }
+
+    componentDidMount(){
+      BooksAPI.getAll()
+      .then(books => {
+          this.setState({books: books})
+      });
+    }
+
+    //Updating the book shelf according to user selection
+    updateBookShelf = (book, shelf) => {
+      BooksAPI.update(book, shelf)
+      .then(() => {
+          book.shelf = shelf;
+          this.setState(state => ({
+              books: state.books.filter(bk => bk.id !== book.id).concat([book])
+          }));
+      });
+    }
+
     render() {
         return (
             <div>
