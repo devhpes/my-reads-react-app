@@ -19,6 +19,17 @@ class Home extends React.Component {
         });
     }
 
+    //Updating book shelf, Book will set on a shelf according to the user selection
+    updateBookShelf = (book, shelf) => {
+        BooksAPI.update(book, shelf)
+        .then(() => {
+            book.shelf = shelf;
+            this.setState(state => ({
+                books: state.books.filter(bk => bk.id !== book.id).concat([book])
+            }));
+        });
+    }
+
     render() {
         return (
             <div>
