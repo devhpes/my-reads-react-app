@@ -1,5 +1,6 @@
 {
   "name": "reactapp",
+  "private": true,
   "homepage": "https://devhpes.github.io/my-reads-react-app/",
   "dependencies": {
     "gh-pages": "^2.0.1",
