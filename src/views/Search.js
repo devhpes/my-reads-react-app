@@ -63,11 +63,14 @@ class Search extends React.Component {
                     <Link className="close-search" to="/"> Close
                     </Link>
                     <div className="search-books-input-wrapper">
-                        <input type="text" placeholder="Search by title or author" />
+                        <input type="text" placeholder="Search by title or author"  onChange={(event) => this.handleSubmitQuery(event.target.value)} value={this.state.query}/>
                     </div>
                     </div>
                     <div className="search-books-results">
                         <ol className="books-grid">
+                        {this.state.listingBooks.map((book, i) => ( 
+                        <Book updateBookShelf ={this.updateBookShelf} key={i} book={book} />
+                        ))}
                         </ol>
                     </div>
                 </div>
