@@ -172,3 +172,9 @@ body, .app {
   text-align: center;
   font-size: 0.8em;
 }
+
+
+.notfound {
+  margin: 20px;
+  border: 2px solid black;
+}
