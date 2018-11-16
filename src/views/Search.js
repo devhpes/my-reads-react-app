@@ -37,6 +37,7 @@ class Search extends React.Component {
         this.setState({query: query})
         let listingBooks = []
         if (query) {
+        //BookAPI search API call 
           BooksAPI.search(query).then(book => {
             if (book.length) {
               listingBooks = book.map(bk => {
@@ -48,6 +49,7 @@ class Search extends React.Component {
                 }
               })
             }
+            //Adding the state to the listing books
             this.setState({listingBooks})
           })
         }
