@@ -32,6 +32,29 @@ class Search extends React.Component {
       });
     }
 
+    handleSubmitQuery  = query => {
+        this.setState({query: query})
+        let listingBooks = []
+        if (query) {
+          BooksAPI.search(query).then(book => {
+            if (book.length) {
+              listingBooks = book.map(bk => {
+                const bookIndex = this.state.books.findIndex(s => s.id === bk.id)
+                if( bookIndex >= 0 ) {
+                  return this.state.books[bookIndex]
+                } else {
+                  return bk
+                }
+              })
+            }
+            this.setState({listingBooks})
+          })
+        }
+        else {
+          this.setState({listingBooks})
+        }
+      } 
+
     render() {
         return (
             <div>
