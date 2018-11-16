@@ -3,9 +3,18 @@
 My Reads react project is built on react framework. This uses react best feature like components.
 In the MyReads project, we have to create a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application.
 
-## TL;DR
+## Online Demo
 
 Visit the project online here - https://devhpes.github.io/my-reads-react-app/
+
+# Requirements
+* npm
+
+# How to Run:
+* Download or Clone the Repository.
+* Run npm install to install the project dependencies.
+* Run the app using npm start.
+* App can be seen at: localhost:3000.
 
 ## TL;DR
 
